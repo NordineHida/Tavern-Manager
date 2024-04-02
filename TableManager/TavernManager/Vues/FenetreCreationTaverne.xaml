@@ -1,0 +1,54 @@
+﻿<Window x:Class="TavernManager.Vues.FenetreCreationTaverne"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TavernManager.Vues"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Création d'une taverne" Height="482" Width="324">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+        <Viewbox Grid.Row="0">
+            <TextBlock>Nom de la taverne</TextBlock>
+        </Viewbox>
+        <Viewbox Grid.Row="1" Margin="10">
+            <TextBox x:Name="TextNom" Width="150" TextAlignment="Center" TextChanged="TextNom_TextChanged" Text="{Binding Nom, Mode=TwoWay}"></TextBox>
+        </Viewbox>
+        <Viewbox Grid.Row="2">
+            <TextBlock>Nombre de clients</TextBlock>
+        </Viewbox>
+        <Viewbox Grid.Row="3" Margin="10" >
+            <TextBox x:Name="TextNombreClients" Width="150" TextAlignment="Center" TextChanged="TextNombreClients_TextChanged" Text="{Binding NombreClient, Mode=TwoWay}"></TextBox>
+        </Viewbox>
+        <Viewbox Grid.Row="4">
+            <TextBlock>Capacité des tables</TextBlock>
+        </Viewbox>
+        <Viewbox Grid.Row="5" Margin="10" >
+            <TextBox x:Name="TextCapacite" Width="150" TextAlignment="Center" TextChanged="TextCapacite_TextChanged"  Text="{Binding Capacite, Mode=TwoWay}"></TextBox>
+        </Viewbox>
+        <Viewbox Grid.Row="6">
+            <TextBlock>Densité des relations</TextBlock>
+        </Viewbox>
+        <Slider Margin="10,10,10,20" x:Name="SliderDensite" Grid.Row="7" Minimum="0" Maximum="100" Value="{Binding Densite, Mode=TwoWay}" ToolTipService.ToolTip="{Binding Path=Value, ElementName=SliderDensite}" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0" ValueChanged="SliderDensite_ValueChanged" Grid.ColumnSpan="2"></Slider>
+        <Viewbox Grid.Row="8" Grid.ColumnSpan="2">
+            <TextBlock>Proportion d'amis</TextBlock>
+        </Viewbox>
+        <Slider Margin="10,10,10,20" x:Name="SliderProportion" Grid.Row="9" Minimum="0" Maximum="100"  Value="{Binding Proportion, Mode=TwoWay}"  ToolTipService.ToolTip="{Binding Path=Value, ElementName=SliderProportion}" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0" ValueChanged="SliderProportion_ValueChanged" Grid.ColumnSpan="2"></Slider>
+        <Viewbox Grid.Row="10">
+            <Button ToolTipService.ShowOnDisabled="True" ToolTipService.InitialShowDelay="0" x:Name="BoutonValider" Width="100" IsEnabled="False" Click="BoutonValider_Click">Valider</Button>
+        </Viewbox>
+    </Grid>
+</Window>

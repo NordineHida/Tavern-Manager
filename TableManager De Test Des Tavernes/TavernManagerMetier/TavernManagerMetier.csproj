@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E66D2485-A998-4E86-B6CD-F730518E459D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TavernManagerMetier</RootNamespace>
+    <AssemblyName>TavernManagerMetier</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\TaverneDAO.cs" />
+    <Compile Include="Exceptions\ExceptionTableManager.cs" />
+    <Compile Include="Exceptions\Realisations\DAO\ExceptionDAOChargement.cs" />
+    <Compile Include="Exceptions\Realisations\DAO\ExceptionDAOSauvegarde.cs" />
+    <Compile Include="Exceptions\Realisations\ExceptionDAO.cs" />
+    <Compile Include="Exceptions\Realisations\ExceptionGeneration.cs" />
+    <Compile Include="Exceptions\Realisations\ExceptionGestionDesTables.cs" />
+    <Compile Include="Exceptions\Realisations\ExceptionGestionTaverne.cs" />
+    <Compile Include="Exceptions\Realisations\ExceptionTaverneImpossible.cs" />
+    <Compile Include="Exceptions\Realisations\Generation\ExceptionTropDeClients.cs" />
+    <Compile Include="Exceptions\Realisations\GestionDesTables\ExceptionClientNonPresentTable.cs" />
+    <Compile Include="Exceptions\Realisations\GestionDesTables\ExceptionTablePleine.cs" />
+    <Compile Include="Exceptions\Realisations\GestionTaverne\ExceptionNumeroClientInconnu.cs" />
+    <Compile Include="Exceptions\Realisations\GestionTaverne\ExceptionNumeroTableInconnu.cs" />
+    <Compile Include="Metier\Algorithmes\AlgorithmeManager.cs" />
+    <Compile Include="Metier\Algorithmes\Graphes\Graphe.cs" />
+    <Compile Include="Metier\Algorithmes\Graphes\Sommet.cs" />
+    <Compile Include="Metier\Algorithmes\IAlgorithme.cs" />
+    <Compile Include="Metier\Algorithmes\Realisations\AlgorithmeColorationCroissante.cs" />
+    <Compile Include="Metier\Algorithmes\Realisations\AlgorithmeDSatur.cs" />
+    <Compile Include="Metier\Algorithmes\Realisations\AlgorithmeLDO.cs" />
+    <Compile Include="Metier\Algorithmes\Realisations\AlgorithmeWelshPowell.cs" />
+    <Compile Include="Metier\Tavernes\Fabriques\FabriqueClient.cs" />
+    <Compile Include="Metier\Tavernes\Client.cs" />
+    <Compile Include="Metier\Tavernes\Fabriques\FabriqueTaverne.cs" />
+    <Compile Include="Metier\Tavernes\Taverne.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Metier\Tavernes\Table.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Metier\Ressources\Nom.txt" />
+    <EmbeddedResource Include="Metier\Ressources\Prenom.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

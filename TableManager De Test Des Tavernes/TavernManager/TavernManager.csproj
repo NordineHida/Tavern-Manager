@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>TavernManager.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Vues\Ressources\TavernManager.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TavernManagerMetier\TavernManagerMetier.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="Vues\Ressources\TavernManager.jpg" />
+  </ItemGroup>
+
+</Project>
